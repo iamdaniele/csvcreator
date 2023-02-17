@@ -23,7 +23,7 @@ function parseLinks(fileContents, name) {
   const parser = new DOMParser();
   const doc = parser.parseFromString(fileContents, 'text/html');
   const out = [];
-  doc.querySelectorAll('td > div > img').forEach(e => e.outerHTML = e.src.replaceAll(/w\d+\-h\d+$/g, 'w300-h300'));
+  doc.querySelectorAll('td > div > img').forEach(e => e.outerHTML = e.src.replaceAll(/w\d+\-h\d+$/g, 'w400-h400'));
   doc.querySelectorAll('tr').forEach(row => {
     out.push([...row.querySelectorAll('td')].map(cell => cell.innerText).join(','));
   });
